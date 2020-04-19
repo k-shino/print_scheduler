@@ -14,5 +14,6 @@ with open('env-definition.json', "r") as g:
     colors = literal_eval(env)
 
 fig = ff.create_gantt(df, colors=colors, index_col='Resource', title=config.get('title'),
-                      show_colorbar=True, bar_width=config.get('bar_width'), showgrid_x=True, showgrid_y=True, group_tasks=True, height=config.get('height'))
+                      show_colorbar=True, bar_width=config.get('bar_width'), showgrid_x=True, 
+                      showgrid_y=True, group_tasks=True, height=config.get('height'), width=config.get('width'))
 fig.write_image(config.get('filename'))
