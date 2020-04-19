@@ -18,8 +18,8 @@ RUN /Miniconda-3.5.5-Linux-x86_64.sh -b
 ENV PATH $PATH:/root/miniconda/bin
 RUN /root/miniconda/bin/conda update --yes conda
 RUN /root/miniconda/bin/conda install --yes -c plotly plotly-orca
-RUN wget -O /usr/bin/yq https://github.com/mikefarah/yq/releases/download/3.2.1/yq_linux_amd64
-RUN chmod +x /usr/bin/yq
+RUN wget -O /usr/bin/yq https://github.com/mikefarah/yq/releases/download/3.2.1/yq_linux_amd64 && \
+    chmod +x /usr/bin/yq
 COPY entrypoint.sh /print/entrypoint.sh
 COPY print_schedule.py /print/print_schedule.py
 ENTRYPOINT bash -x /print/entrypoint.sh
