@@ -7,3 +7,4 @@ yq r tasks.yml -j > tasks.json
 python /print/print_schedule.py
 rm config.json
 rm env-definition.json
+rm tasks.json
